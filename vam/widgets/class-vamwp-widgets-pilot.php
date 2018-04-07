@@ -512,7 +512,7 @@
 
     if (
         (!isset($_GET["pilot_id"])) ||
-        (isset($_GET["pilot_id"]) && is_user_logged_in())
+        (isset($_GET["pilot_id"]) && $this->wp_user->exists())
       ) {
 
    		add_action('wp_head', function() {
