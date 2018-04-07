@@ -174,7 +174,7 @@
  		}
 
  		while ($row = $result->fetch_assoc()) {
- 			data[$count] = array ($row["latitude_deg"],  $row["longitude_deg"] ,  $row["ident"],  $row["airport_name"] );
+ 			$data[$count] = array ($row["latitude_deg"],  $row["longitude_deg"] ,  $row["ident"],  $row["airport_name"] );
  			$count++;
  		}
 
