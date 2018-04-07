@@ -852,6 +852,7 @@
    			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
    			echo '<script type="text/javascript">
             var b;
+            alert("b");
    					function init_map() {
    						var locations = ' . json_encode($this->hub_map_data) . ';
    						var var_location = new google.maps.LatLng(' . $this->hub_map_latlong["lat_centro"] . ',' . $this->hub_map_latlong["long_centro"] . ');
