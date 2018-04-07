@@ -369,6 +369,8 @@
 
 		<hr />
 
+    <h3>Google Maps</h3>
+
     <p>
 			<input type="text" name="mt_vam_googlemaps_api_key" value="<?php echo $mt_vam_googlemaps_api_key; ?>" size="20">
 			<?php _e("Google Maps API Key", "vamwp"); ?>
