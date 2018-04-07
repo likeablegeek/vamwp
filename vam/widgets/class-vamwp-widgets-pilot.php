@@ -510,9 +510,13 @@
     $this->callsign = (isset($_GET["pilot_id"])) ? $this->vam->get_pilot_callsign($_GET["pilot_id"]) : wp_get_current_user()->user_login;
     $this->flight_data = $this->get_pilot_flights_map($this->callsign);
 
-    if (!isset($_GET["pilot_id"]) || (isset($_GET["pilot_id"]) && is_user_logged_in())) {
+    if (
+        (!isset($_GET["pilot_id"])) ||
+        (isset($_GET["pilot_id"]) && is_user_logged_in())
+      ) {
 
    		add_action('wp_head', function() {
+        //a
    			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
    			echo '<script type="text/javascript">
    					function init_map() {
