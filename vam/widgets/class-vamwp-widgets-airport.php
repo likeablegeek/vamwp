@@ -222,8 +222,8 @@
         		while (k<10) {
         			dep = new google.maps.LatLng(locations[k][0], locations[k][1]);
         			arr = new google.maps.LatLng(locations[k+1][0], locations[k+1][1]);
-        			var icon_red = 'images/airport_runway_red.png';
-        			var icon_green = 'images/airport_runway_green.png';
+        			var icon_red = "images/airport_runway_red.png";
+        			var icon_green = "images/airport_runway_green.png";
         			var marker_dep = new google.maps.Marker({
         				position: dep,
         				icon: icon_green
@@ -237,7 +237,7 @@
         			var var_marker = new google.maps.Polyline({
         				path: [dep, arr],
         				geodesic: true,
-        				strokeColor: '#FF0000',
+        				strokeColor: ""#FF0000",
         				strokeOpacity: 1.0,
         				strokeWeight: 2
         			});
