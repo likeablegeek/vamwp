@@ -35,7 +35,7 @@
  	limitations under the License.
 
  */
- 
+
  /**
  * Widgets defined in this file:
  *
@@ -160,7 +160,29 @@
 */
  class VAM_Widget_Airport_Map extends WP_Widget {
 
-   public function get_airport_map_url($airport) {
+   public function get_airport_map_data($airport) {
+
+ 		$data = array();
+ 		$count = 0;
+
+ 		$sql = "select latitude_deg, longitude_deg ,ident ,
+              airports.name as airport_name
+              from airports where ident='$airport'";
+
+ 		if (!$result = $this->vam->db->query($sql)) {
+ 			die('There was an error running the query [' . $this->vam->db->error . ']');
+ 		}
+
+ 		while ($row = $result->fetch_assoc()) {
+ 			data[$count] = array ($row["latitude_deg"],  $row["longitude_deg"] ,  $row["ident"],  $row["airport_name"] );
+ 			$count++;
+ 		}
+
+ 		return $data;
+
+ 	}
+
+  public function get_airport_map_url($airport) {
 
  		return $this->vam->vam_url_path . "airport_map.php?airport=" . $airport;
 
@@ -179,7 +201,79 @@
  		$this->airport = (isset($_GET["airport"])) ? $_GET["airport"] : "";
  		if ($this->airport != "") {
  			$this->airport_map_url = $this->get_airport_map_url($this->airport);
+      $this->airport_map_data = $this->get_airport_map_data($this->airport);
  		}
+
+    add_action('wp_head', function() {
+ 			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
+ 			echo '<script type="text/javascript">
+ 					function init_map() {
+ 						var locations = ' . json_encode($this->airport_map_data) . ';
+ 						var var_location = new google.maps.LatLng(' . $this->airport_map_data[0][0] . ',' . $this->airport_map_data[0][1] . ');
+            var var_mapoptions = {
+        			center: var_location,
+        			zoom: 14,
+        			mapTypeId: google.maps.MapTypeId.HYBRID ,
+        			styles: [{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF",}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]
+        		};
+        		var var_map = new google.maps.Map(document.getElementById("map-container"),
+        			var_mapoptions);
+        		var k=0;
+        		while (k<10) {
+        			dep = new google.maps.LatLng(locations[k][0], locations[k][1]);
+        			arr = new google.maps.LatLng(locations[k+1][0], locations[k+1][1]);
+        			var icon_red = 'images/airport_runway_red.png';
+        			var icon_green = 'images/airport_runway_green.png';
+        			var marker_dep = new google.maps.Marker({
+        				position: dep,
+        				icon: icon_green
+        			});
+        			var marker_arr = new google.maps.Marker({
+        				position: arr,
+        				icon: icon_green
+        			});
+        			marker_dep.setMap(var_map);
+        			marker_arr.setMap(var_map);
+        			var var_marker = new google.maps.Polyline({
+        				path: [dep, arr],
+        				geodesic: true,
+        				strokeColor: '#FF0000',
+        				strokeOpacity: 1.0,
+        				strokeWeight: 2
+        			});
+        			var_marker.setMap(var_map);
+        			var marker_dep = new google.maps.Marker({
+        				position: dep,
+        				icon: icon_green
+        			});
+        			var marker_arr = new google.maps.Marker({
+        				position: arr,
+        				icon: icon_green
+        			});
+        			marker_dep.setMap(var_map);
+        			marker_arr.setMap(var_map);
+        			k=k+2;
+        		}
+        	}
+ 				</script>';
+ 			echo '	body { background-color:#FFFFF }
+            	#map-outer {
+            		padding: 0px;
+            		border: 0px solid #CCC;
+            		margin-bottom: 0px;
+            		background-color:#FFFFF }
+            	#map-container { height: 500px }
+            	@media all and (max-width: 991px) {
+            		#map-outer  { height: 650px }
+	             }';
+ 		});
+
+ 		add_action('wp_footer', function() {
+ 			echo '<script type="text/javascript">
+ 				google.maps.event.addDomListener(window, "load", init_map);
+ 			</script>';
+ 		});
+
  	}
 
  	/**
@@ -197,7 +291,15 @@
 
  		//$va_data = $this->vam->get_va_data();
 
- 		echo ( '<table class="vam-datatable display" id="vam-airport-map" width="100%">
+    echo ( '<div class="container">
+ 					<div class="row">
+ 						<div id="map-outer" class="col-md-11">
+ 							<div id="map-container" class="col-md-12"></div>
+ 						</div>
+ 					</div>
+ 				</div>');
+
+ 		/*echo ( '<table class="vam-datatable display" id="vam-airport-map" width="100%">
  			<thead><thead>
  			<tbody>');
 
@@ -206,7 +308,8 @@
  			</tr>');
 
  		echo ( '</tbody>
- 		</table>');
+ 		</table>');*/
+
  		echo $args['after_widget'];
  	}
 
