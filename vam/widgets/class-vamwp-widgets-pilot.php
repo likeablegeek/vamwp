@@ -508,9 +508,9 @@
  		$this->vam = new VAMWP_VAM();
  		$this->wp_user = wp_get_current_user();
     $this->callsign = (isset($_GET["pilot_id"])) ? $this->vam->get_pilot_callsign($_GET["pilot_id"]) : wp_get_current_user()->user_login;
-    if ($this->callsign != "") {
+    $this->flight_data = $this->get_pilot_flights_map($this->callsign);
 
-      $this->flight_data = $this->get_pilot_flights_map($this->callsign);
+    if (!isset($_GET)["pilot_id"] || is_user_logged_in()) {
 
    		add_action('wp_head', function() {
    			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
