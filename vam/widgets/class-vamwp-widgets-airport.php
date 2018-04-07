@@ -219,7 +219,7 @@
               		border: 0px solid #CCC;
               		margin-bottom: 0px;
               		background-color:#FFFFF }
-              	#map-container { height: 500px }
+              	#map-container { height: 500px; width: 100%; }
               	@media all and (max-width: 991px) {
               		#map-outer  { height: 650px }
   	             }
