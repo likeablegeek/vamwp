@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VAMwp 0.1.0\n"
+"POT-Creation-Date: 2018-04-07 13:58+0100\n"
+"PO-Revision-Date: 2018-04-07 13:59+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: vam/widgets/class-vamwp-widgets-aircraft.php\n"
+"X-Poedit-SearchPath-1: vam/widgets/class-vamwp-widgets-airline.php\n"
+"X-Poedit-SearchPath-2: vam/widgets/class-vamwp-widgets-airport.php\n"
+"X-Poedit-SearchPath-3: vam/widgets/class-vamwp-widgets-hub.php\n"
+"X-Poedit-SearchPath-4: vam/widgets/class-vamwp-widgets-pilot-public.php\n"
+"X-Poedit-SearchPath-5: vam/widgets/class-vamwp-widgets-pilot.php\n"
+"X-Poedit-SearchPath-6: admin/class-vamwp-admin.php\n"
+
+#: admin/class-vamwp-admin.php:74
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
+
+#: admin/class-vamwp-admin.php:108
+msgid "Your settings have been saved. Happy flying."
+msgstr "Your settings have been saved. Happy flying."
+
+#: admin/class-vamwp-admin.php:115
+msgid "VAMwp Options"
+msgstr "VAMwp Options"
+
+#: admin/class-vamwp-admin.php:120
+msgid "VAM URL Path"
+msgstr "VAM URL Path"
+
+#: admin/class-vamwp-admin.php:124
+msgid "VAM MySQL Server"
+msgstr "VAM MySQL Server"
+
+#: admin/class-vamwp-admin.php:127
+msgid "VAM MySQL DB Name"
+msgstr "VAM MySQL DB Name"
+
+#: admin/class-vamwp-admin.php:130
+msgid "VAM MySQL DB Username"
+msgstr "VAM MySQL DB Username"
+
+#: admin/class-vamwp-admin.php:133
+msgid "VAM MySQL DB Password"
+msgstr "VAM MySQL DB Password"
+
+#: admin/class-vamwp-admin.php:138
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:105
+#: vam/widgets/class-vamwp-widgets-airline.php:537
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:330
+#: vam/widgets/class-vamwp-widgets-pilot.php:329
+msgid "Date"
+msgstr "Date"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:106
+#: vam/widgets/class-vamwp-widgets-airline.php:534
+#: vam/widgets/class-vamwp-widgets-airline.php:668
+msgid "Pilot"
+msgstr "Pilot"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:107
+#: vam/widgets/class-vamwp-widgets-airline.php:533
+#: vam/widgets/class-vamwp-widgets-airline.php:810
+#: vam/widgets/class-vamwp-widgets-hub.php:520
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:126
+#: vam/widgets/class-vamwp-widgets-pilot.php:124
+msgid "Callsign"
+msgstr "Callsign"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:108
+#: vam/widgets/class-vamwp-widgets-airline.php:956
+#: vam/widgets/class-vamwp-widgets-hub.php:361
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:331
+#: vam/widgets/class-vamwp-widgets-pilot.php:330
+msgid "Flight"
+msgstr "Flight"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:109
+#: vam/widgets/class-vamwp-widgets-airline.php:535
+#: vam/widgets/class-vamwp-widgets-airline.php:957
+#: vam/widgets/class-vamwp-widgets-hub.php:362
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:332
+#: vam/widgets/class-vamwp-widgets-pilot.php:331
+msgid "Departure"
+msgstr "Departure"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:110
+#: vam/widgets/class-vamwp-widgets-airline.php:536
+#: vam/widgets/class-vamwp-widgets-airline.php:958
+#: vam/widgets/class-vamwp-widgets-hub.php:363
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:333
+#: vam/widgets/class-vamwp-widgets-pilot.php:332
+msgid "Arrival"
+msgstr "Arrival"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:111
+#: vam/widgets/class-vamwp-widgets-airline.php:1280
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:335
+#: vam/widgets/class-vamwp-widgets-pilot.php:334
+msgid "Distance"
+msgstr "Distance"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:112
+msgid "Fuel"
+msgstr "Fuel"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:248
+msgid "Hangar Entry Date"
+msgstr "Hangar Entry Date"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:249
+msgid "Hangar Exit Date"
+msgstr "Hangar Exit Date"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:250
+msgid "Last Pilot"
+msgstr "Last Pilot"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:251
+msgid "Reason"
+msgstr "Reason"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:404
+#: vam/widgets/class-vamwp-widgets-airline.php:376
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:120
+#: vam/widgets/class-vamwp-widgets-pilot.php:118
+msgid "Item"
+msgstr "Item"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:405
+#: vam/widgets/class-vamwp-widgets-airline.php:377
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:121
+#: vam/widgets/class-vamwp-widgets-pilot.php:119
+msgid "Value"
+msgstr "Value"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:413
+#: vam/widgets/class-vamwp-widgets-airline.php:811
+#: vam/widgets/class-vamwp-widgets-airline.php:1127
+#: vam/widgets/class-vamwp-widgets-airport.php:438
+#: vam/widgets/class-vamwp-widgets-airport.php:562
+#: vam/widgets/class-vamwp-widgets-hub.php:215
+#: vam/widgets/class-vamwp-widgets-hub.php:521
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:130
+#: vam/widgets/class-vamwp-widgets-pilot.php:128
+msgid "Name"
+msgstr "Name"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:417
+#: vam/widgets/class-vamwp-widgets-airline.php:813
+#: vam/widgets/class-vamwp-widgets-airline.php:1123
+#: vam/widgets/class-vamwp-widgets-hub.php:522
+#: vam/widgets/class-vamwp-widgets-hub.php:678
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:144
+#: vam/widgets/class-vamwp-widgets-pilot.php:142
+msgid "Location"
+msgstr "Location"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:422
+#: vam/widgets/class-vamwp-widgets-airline.php:812
+#: vam/widgets/class-vamwp-widgets-airline.php:1124
+#: vam/widgets/class-vamwp-widgets-airline.php:1657
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:138
+#: vam/widgets/class-vamwp-widgets-pilot.php:136
+msgid "Hub"
+msgstr "Hub"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:427
+#: vam/widgets/class-vamwp-widgets-airline.php:1122
+#: vam/widgets/class-vamwp-widgets-airport.php:437
+#: vam/widgets/class-vamwp-widgets-airport.php:561
+#: vam/widgets/class-vamwp-widgets-hub.php:677
+msgid "Type"
+msgstr "Type"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:431
+#: vam/widgets/class-vamwp-widgets-airline.php:814
+#: vam/widgets/class-vamwp-widgets-airline.php:1126
+#: vam/widgets/class-vamwp-widgets-hub.php:523
+#: vam/widgets/class-vamwp-widgets-hub.php:679
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:150
+#: vam/widgets/class-vamwp-widgets-pilot.php:148
+msgid "Hours"
+msgstr "Hours"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:435
+#: vam/widgets/class-vamwp-widgets-aircraft.php:436
+#: vam/widgets/class-vamwp-widgets-airline.php:1128
+msgid "Booked"
+msgstr "Booked"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:436
+msgid "Available"
+msgstr "Available"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:439
+#: vam/widgets/class-vamwp-widgets-airline.php:817
+#: vam/widgets/class-vamwp-widgets-airline.php:1125
+#: vam/widgets/class-vamwp-widgets-hub.php:526
+#: vam/widgets/class-vamwp-widgets-hub.php:680
+msgid "Status"
+msgstr "Status"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:443
+msgid "Number of PAX"
+msgstr "Number of PAX"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:447
+msgid "Maximum Range"
+msgstr "Maximum Range"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:451
+msgid "Cargo Capacity"
+msgstr "Cargo Capacity"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:455
+msgid "Aircraft Length"
+msgstr "Aircraft Length"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:459
+msgid "Maximum Zero-fuel Weight (MZFW)"
+msgstr "Maximum Zero-fuel Weight (MZFW)"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:463
+msgid "Maximum Landing Weight (MLW)"
+msgstr "Maximum Landing Weight (MLW)"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:467
+msgid "Maximum Takeoff Weight (MTOW)"
+msgstr "Maximum Takeoff Weight (MTOW)"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:471
+msgid "Cruising Speed"
+msgstr "Cruising Speed"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:475
+msgid "Service Ceiling"
+msgstr "Service Ceiling"
+
+#: vam/widgets/class-vamwp-widgets-aircraft.php:479
+msgid "Crew Members"
+msgstr "Crew Members"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:382
+msgid "Pilots"
+msgstr "Pilots"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:386
+msgid "Aircraft in Fleet"
+msgstr "Aircraft in Fleet"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:390
+msgid "Routes"
+msgstr "Routes"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:394
+msgid "Total Hours"
+msgstr "Total Hours"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:398
+msgid "Flights Total"
+msgstr "Flights Total"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:402
+msgid "Flights Regular"
+msgstr "Flights Regular"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:406
+msgid "Flights Charter"
+msgstr "Flights Charter"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:410
+msgid "% Flights Regular"
+msgstr "% Flights Regular"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:538
+msgid "Flight Time"
+msgstr "Flight Time"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:669
+msgid "Joined"
+msgstr "Joined"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:815
+#: vam/widgets/class-vamwp-widgets-airline.php:1407
+#: vam/widgets/class-vamwp-widgets-hub.php:524
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:134
+#: vam/widgets/class-vamwp-widgets-pilot.php:132
+msgid "Rank"
+msgstr "Rank"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:816
+#: vam/widgets/class-vamwp-widgets-hub.php:525
+msgid "Country"
+msgstr "Country"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:818
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:154
+#: vam/widgets/class-vamwp-widgets-pilot.php:152
+msgid "IVAO"
+msgstr "IVAO"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:819
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:158
+#: vam/widgets/class-vamwp-widgets-pilot.php:156
+msgid "VATSIM"
+msgstr "VATSIM"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:835
+msgid "Active"
+msgstr "Active"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:835
+msgid "Inactive"
+msgstr "Inactive"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:959
+#: vam/widgets/class-vamwp-widgets-pilot-public.php:334
+#: vam/widgets/class-vamwp-widgets-pilot.php:333
+msgid "Duration"
+msgstr "Duration"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:960
+msgid "Plane Type"
+msgstr "Plane Type"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1121
+msgid "Tail Number"
+msgstr "Tail Number"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1129
+#: vam/widgets/class-vamwp-widgets-airline.php:1281
+#: vam/widgets/class-vamwp-widgets-airline.php:1661
+msgid "Info"
+msgstr "Info"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1276
+msgid "Tour"
+msgstr "Tour"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1277
+msgid "Start Date"
+msgstr "Start Date"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1278
+msgid "End Date"
+msgstr "End Date"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1279
+msgid "Num. Legs"
+msgstr "Num. Legs"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1408
+msgid "Rank Image"
+msgstr "Rank Image"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1409
+msgid "Rank Minimum"
+msgstr "Rank Minimum"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1410
+msgid "Rank Maximum"
+msgstr "Rank Maximum"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1411
+msgid "Salary Per Hour"
+msgstr "Salary Per Hour"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1533
+msgid "Award Name"
+msgstr "Award Name"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1534
+msgid "Award Description"
+msgstr "Award Description"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1658
+#: vam/widgets/class-vamwp-widgets-hub.php:226
+msgid "Number of Pilots"
+msgstr "Number of Pilots"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1659
+#: vam/widgets/class-vamwp-widgets-hub.php:229
+msgid "Number of Aircraft"
+msgstr "Number of Aircraft"
+
+#: vam/widgets/class-vamwp-widgets-airline.php:1660
+#: vam/widgets/class-vamwp-widgets-hub.php:232
+msgid "Number of Routes"
+msgstr "Number of Routes"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:298
+msgid "Runway"
+msgstr "Runway"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:299
+msgid "Length"
+msgstr "Length"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:300
+msgid "Width"
+msgstr "Width"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:301
+msgid "Elevation"
+msgstr "Elevation"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:302
+msgid "Displaced Threshold"
+msgstr "Displaced Threshold"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:303
+msgid "Heading"
+msgstr "Heading"
+
+#: vam/widgets/class-vamwp-widgets-airport.php:439
+#: vam/widgets/class-vamwp-widgets-airport.php:563
+msgid "Freq"
+msgstr "Freq"
+
+#: vam/widgets/class-vamwp-widgets-hub.php:79
+msgid "View airport information"
+msgstr "View airport information"
+
+#: vam/widgets/class-vamwp-widgets-hub.php:221
+msgid "Website"
+msgstr "Website"
+
+#: vam/widgets/class-vamwp-widgets-hub.php:676
+msgid "Registry"
+msgstr "Registry"
+
+#: vam/widgets/class-vamwp-widgets-pilot.php:160
+msgid "User type"
+msgstr "User type"
+
+#: vam/widgets/class-vamwp-widgets-pilot.php:335
+msgid "Validation"
+msgstr "Validation"
+
+#~ msgid "settings saved."
+#~ msgstr "Your settings have been saved. Happy flying."
