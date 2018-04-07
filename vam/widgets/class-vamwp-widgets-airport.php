@@ -182,12 +182,6 @@
 
  	}
 
-  public function get_airport_map_url($airport) {
-
- 		return $this->vam->vam_url_path . "airport_map.php?airport=" . $airport;
-
- 	}
-
  	/**
  	 * Sets up the widgets name etc
  	 */
@@ -200,7 +194,6 @@
  		$this->vam = new VAMWP_VAM();
  		$this->airport = (isset($_GET["airport"])) ? $_GET["airport"] : "";
  		if ($this->airport != "") {
- 			$this->airport_map_url = $this->get_airport_map_url($this->airport);
       $this->airport_map_data = $this->get_airport_map_data($this->airport);
 
       add_action('wp_head', function() {
@@ -254,8 +247,6 @@
  			echo $args['before_title'] . apply_filters('widget_title',$instance['title']) . ' - ' . $this->airport . $args['after_title'];
  		}
 
- 		//$va_data = $this->vam->get_va_data();
-
     echo ( '<div class="container">
  					<div class="row">
  						<div id="map-outer" class="col-md-11">
@@ -263,17 +254,6 @@
  						</div>
  					</div>
  				</div>');
-
- 		/*echo ( '<table class="vam-datatable display" id="vam-airport-map" width="100%">
- 			<thead><thead>
- 			<tbody>');
-
- 			echo('<tr>
- 				<td><iframe src="' . $this->airport_map_url . '" width="100%" height="500px"></iframe></td>
- 			</tr>');
-
- 		echo ( '</tbody>
- 		</table>');*/
 
  		echo $args['after_widget'];
  	}
