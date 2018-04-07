@@ -510,7 +510,7 @@
     $this->callsign = (isset($_GET["pilot_id"])) ? $this->vam->get_pilot_callsign($_GET["pilot_id"]) : wp_get_current_user()->user_login;
     $this->flight_data = $this->get_pilot_flights_map($this->callsign);
 
-    if ( count()$this->flight_data) > 0 ) {
+    if ( count($this->flight_data) > 0 ) {
 //        (!isset($_GET["pilot_id"])) ||
 //        (isset($_GET["pilot_id"]) && $this->wp_user->exists())
 
