@@ -219,6 +219,7 @@
               		border: 0px solid #CCC;
               		margin-bottom: 0px;
               		background-color:#FFFFF }
+                  #map-outer-container { width: 100%; }
               	#map-container { height: 500px; width: 100%; }
               	@media all and (max-width: 991px) {
               		#map-outer  { height: 650px }
@@ -248,7 +249,7 @@
  			echo $args['before_title'] . apply_filters('widget_title',$instance['title']) . ' - ' . $this->airport . $args['after_title'];
  		}
 
-    echo ( '<div class="container">
+    echo ( '<div class="container" id="map-outer-container">
  					<div class="row">
  						<div id="map-outer" class="col-md-11">
  							<div id="map-container" class="col-md-12"></div>
