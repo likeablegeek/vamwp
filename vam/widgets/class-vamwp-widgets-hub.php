@@ -35,7 +35,7 @@
  	limitations under the License.
 
  */
- 
+
  /**
  * Widgets defined in this file:
  *
@@ -768,6 +768,42 @@
 */
  class VAM_Widget_Hub_Routes_Map extends WP_Widget {
 
+   public function get_hub_flights_map($hub_id) {
+
+ 		$data = array();
+ 		$count = 0;
+
+    $sql = "SELECT * FROM routes INNER JOIN airports ON airports.ident = routes.arrival  WHERE hub_id = $hub_id";
+    if (!$result = $this->vam->db->query($sql)) {
+ 			die('There was an error running the query [' . $this->vam->db->error . ']');
+ 		}
+  	while ($row = $result->fetch_assoc()) {
+  		$data[$index] = array ($row["latitude_deg"],  $row["longitude_deg"] ,  $row["ident"],  $row["name"]) ;
+      $count++;
+  	}
+
+    return $data;
+
+  }
+
+  public function get_hub_flights_map_latlong($hub_id) {
+
+    $data = array();
+    $count = 0;
+
+    $sql = "SELECT * FROM  hubs h  INNER JOIN airports a on a.ident=h.hub WHERE h.hub_id = $hub_id ";
+    if (!$result = $this->vam->db->query($sql)) {
+ 			die('There was an error running the query [' . $this->vam->db->error . ']');
+ 		}
+  	while ($row = $result->fetch_assoc()) {
+  		$data['lat_centro'] = $row["latitude_deg"];
+  		$$data['long_centro'] = $row["longitude_deg"];
+  	}
+
+    return $data;
+
+  }
+
    public function get_hub_details($hub_id) {
 
      $data = array();
@@ -784,11 +820,11 @@
 
    }
 
-   public function get_hub_routes_map_url($hub_id) {
+/*   public function get_hub_routes_map_url($hub_id) {
 
  		return $this->vam->vam_url_path . "hub_routes_map.php?hub_id=" . $hub_id;
 
- 	}
+ 	}*/
 
  	/**
  	 * Sets up the widgets name etc
@@ -803,7 +839,82 @@
  		$this->hub_id = (isset($_GET["hub_id"])) ? $_GET["hub_id"] : "";
  		if ($this->hub_id != "") {
  			$this->hub_data = $this->get_hub_details($this->hub_id);
- 			$this->routes_map_url = $this->get_hub_routes_map_url($this->hub_id);
+// 			$this->routes_map_url = $this->get_hub_routes_map_url($this->hub_id);
+      $this->hub_map_data = $this->get_hub_flights_map($this->hub_id);
+      $this->hub_map_latlong = $this->get_hub_flights_map_latlong($this->hub_id);
+
+      add_action('wp_head', function() {
+   			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
+   			echo '<script type="text/javascript">
+   					function init_map() {
+   						var locations = ' . json_encode($this->hub_map_data) . ';
+   						var var_location = new google.maps.LatLng(' . $this->hub_map_latlong["lat_centro"] . ',' . $this->hub_map_latlong["long_centro"] . ');
+              var var_mapoptions = {
+          			center: var_location,
+          			zoom: 5,
+          			styles: [{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF",}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]
+          		};
+   						var var_map = new google.maps.Map(document.getElementById("map-container"),var_mapoptions);
+              var k=0;
+          		var arr_long= locations.length;
+          		while (k<arr_long) {
+          			dep = var_location;
+          			arr = new google.maps.LatLng(locations[k][0], locations[k][1]);
+          			var icon_red = "images/airport_runway_red.png";
+          			var icon_green = "images/airport_runway_green.png";
+          			var icon_red = "";
+          			var icon_green = "";
+          			var marker_dep = new google.maps.Marker({
+          				position: dep,
+          				icon: icon_green
+          			});
+          			var marker_arr = new google.maps.Marker({
+          				position: arr,
+          				icon: icon_green
+          			});
+          			marker_dep.setMap(var_map);
+          			marker_arr.setMap(var_map);
+          			var var_marker = new google.maps.Polyline({
+          				path: [dep, arr],
+          				geodesic: true,
+          				strokeColor: "#FF0000",
+          				strokeOpacity: 1.0,
+          				strokeWeight: 2
+          			});
+          			var_marker.setMap(var_map);
+          			var marker_dep = new google.maps.Marker({
+          				position: dep,
+          				icon: icon_green
+          			});
+          			var marker_arr = new google.maps.Marker({
+          				position: arr,
+          				icon: icon_green
+          			});
+          			marker_dep.setMap(var_map);
+          			marker_arr.setMap(var_map);
+          			k++;
+          		}
+   				}
+   				</script>';
+   			echo '<style>
+   						#map-outer {
+   							padding: 0px;
+   							border: 0px solid #CCC;
+   							margin-bottom: 0px;
+   							background-color:#FFFFF;
+   							width: 710px; }
+   						#map-container { height: 500px }
+   						@media all and (max-width: 991px) {
+   							#map-outer  { height: 650px }
+   						}
+   				</style>';
+   		});
+
+   		add_action('wp_footer', function() {
+   			echo '<script type="text/javascript">
+   				google.maps.event.addDomListener(window, "load", init_map);
+   			</script>';
+   		});
  		}
  	}
 
@@ -820,9 +931,16 @@
  			echo $args['before_title'] . apply_filters('widget_title',$instance['title']) . ' - ' . $this->hub_data['hub_code'] . $args['after_title'];
  		}
 
- 		//$va_data = $this->vam->get_va_data();
+    echo ( '<div class="container">
+ 					<div class="row">
+ 						<div id="map-outer" class="col-md-11">
+ 							<div id="map-container" class="col-md-12"></div>
+ 						</div>
+ 					</div>
+ 				</div>');
 
- 		echo ( '<table class="vam-datatable display" id="vam-hub-routes-map">
+
+/* 		echo ( '<table class="vam-datatable display" id="vam-hub-routes-map">
  			<thead><thead>
  			<tbody>');
 
@@ -832,7 +950,7 @@
 
  		echo ( '</tbody>
  		</table>');
- 		echo $args['after_widget'];
+ 		echo $args['after_widget'];*/
  	}
 
  	/**
