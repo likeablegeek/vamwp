@@ -113,7 +113,7 @@
 		$mt_vam_url_ranks = get_option("mt_vam_url_ranks");
 		$mt_vam_url_awards = get_option("mt_vam_url_awards");
 		$mt_vam_url_pilot_register = get_option("mt_vam_url_pilot_register");
-    $mt_vam_googlemaps_api_key = get_options("mt_vam_googlemaps_api_key");
+    $mt_vam_googlemaps_api_key = get_option("mt_vam_googlemaps_api_key");
 
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
