@@ -516,9 +516,9 @@
       ) {
 
    		add_action('wp_head', function() {
-        //a
    			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
    			echo '<script type="text/javascript">
+            var a;
    					function init_map() {
    						var locations = ' . json_encode($this->flight_data) . ';
    						var var_location = new google.maps.LatLng(' . $this->flight_data[0][0] . ',' . $this->flight_data[0][1] . ');

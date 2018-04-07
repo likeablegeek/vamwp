@@ -199,6 +199,7 @@
       add_action('wp_head', function() {
    			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
    			echo '<script type="text/javascript">
+            var c;
    					function init_map() {
    						var locations = ' . json_encode($this->airport_map_data) . ';
    						var var_location = new google.maps.LatLng(' . $this->airport_map_data[0][0] . ',' . $this->airport_map_data[0][1] . ');
