@@ -802,7 +802,7 @@
  		}
   	while ($row = $result->fetch_assoc()) {
   		$data['lat_centro'] = $row["latitude_deg"];
-  		$$data['long_centro'] = $row["longitude_deg"];
+  		$data['long_centro'] = $row["longitude_deg"];
   	}
 
     return $data;
