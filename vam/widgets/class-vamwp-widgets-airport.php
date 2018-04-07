@@ -256,7 +256,8 @@
         		}
         	}
  				</script>';
- 			echo '	body { background-color:#FFFFF }
+ 			echo '<style>
+      	     body { background-color:#FFFFF }
             	#map-outer {
             		padding: 0px;
             		border: 0px solid #CCC;
@@ -265,7 +266,8 @@
             	#map-container { height: 500px }
             	@media all and (max-width: 991px) {
             		#map-outer  { height: 650px }
-	             }';
+	             }
+              </style>';
  		});
 
  		add_action('wp_footer', function() {
