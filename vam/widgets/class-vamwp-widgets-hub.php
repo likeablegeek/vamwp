@@ -226,7 +226,12 @@
  		//$va_data = $this->vam->get_va_data();
 
  		echo ( '<table class="vam-datatable display" id="vam-hub-details">
- 					<thead></thead>
+          <thead>
+          <tr>
+            <th>' . __("Item", "vamwp") . '</th>
+            <th>' . __("Value", "vamwp") . '</th>
+          </tr>
+          </thead>
  					<tbody>');
 
  		if (trim($this->hub_data['hub_image']) != "") {

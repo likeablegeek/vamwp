@@ -129,7 +129,8 @@
 	    $('#vam-hub-details').DataTable({
         	"paging":   false,
         	"info":     false,
-        	"searching":	false
+        	"searching":	false,
+					"ordering": false
    		 });
 
 	    $('#vam-hub-routes-map').DataTable({
