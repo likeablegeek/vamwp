@@ -783,7 +783,7 @@
  			die('There was an error running the query [' . $this->vam->db->error . ']');
  		}
   	while ($row = $result->fetch_assoc()) {
-  		$data[$index] = array ($row["latitude_deg"],  $row["longitude_deg"] ,  $row["ident"],  $row["name"]) ;
+  		$data[$count] = array ($row["latitude_deg"],  $row["longitude_deg"] ,  $row["ident"],  $row["name"]) ;
       $count++;
   	}
 
