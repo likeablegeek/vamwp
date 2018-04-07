@@ -202,79 +202,79 @@
  		if ($this->airport != "") {
  			$this->airport_map_url = $this->get_airport_map_url($this->airport);
       $this->airport_map_data = $this->get_airport_map_data($this->airport);
+
+      add_action('wp_head', function() {
+   			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
+   			echo '<script type="text/javascript">
+   					function init_map() {
+   						var locations = ' . json_encode($this->airport_map_data) . ';
+   						var var_location = new google.maps.LatLng(' . $this->airport_map_data[0][0] . ',' . $this->airport_map_data[0][1] . ');
+              var var_mapoptions = {
+          			center: var_location,
+          			zoom: 14,
+          			mapTypeId: google.maps.MapTypeId.HYBRID ,
+          			styles: [{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF",}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]
+          		};
+          		var var_map = new google.maps.Map(document.getElementById("map-container"),
+          			var_mapoptions);
+          		var k=0;
+          		while (k<10) {
+          			dep = new google.maps.LatLng(locations[k][0], locations[k][1]);
+          			arr = new google.maps.LatLng(locations[k+1][0], locations[k+1][1]);
+          			var icon_red = "images/airport_runway_red.png";
+          			var icon_green = "images/airport_runway_green.png";
+          			var marker_dep = new google.maps.Marker({
+          				position: dep,
+          				icon: icon_green
+          			});
+          			var marker_arr = new google.maps.Marker({
+          				position: arr,
+          				icon: icon_green
+          			});
+          			marker_dep.setMap(var_map);
+          			marker_arr.setMap(var_map);
+          			var var_marker = new google.maps.Polyline({
+          				path: [dep, arr],
+          				geodesic: true,
+          				strokeColor: ""#FF0000",
+          				strokeOpacity: 1.0,
+          				strokeWeight: 2
+          			});
+          			var_marker.setMap(var_map);
+          			var marker_dep = new google.maps.Marker({
+          				position: dep,
+          				icon: icon_green
+          			});
+          			var marker_arr = new google.maps.Marker({
+          				position: arr,
+          				icon: icon_green
+          			});
+          			marker_dep.setMap(var_map);
+          			marker_arr.setMap(var_map);
+          			k=k+2;
+          		}
+          	}
+   				</script>';
+   			echo '<style>
+        	     body { background-color:#FFFFF }
+              	#map-outer {
+              		padding: 0px;
+              		border: 0px solid #CCC;
+              		margin-bottom: 0px;
+              		background-color:#FFFFF }
+              	#map-container { height: 500px }
+              	@media all and (max-width: 991px) {
+              		#map-outer  { height: 650px }
+  	             }
+                </style>';
+   		});
+
+   		add_action('wp_footer', function() {
+   			echo '<script type="text/javascript">
+   				google.maps.event.addDomListener(window, "load", init_map);
+   			</script>';
+   		});
  		}
-
-    add_action('wp_head', function() {
- 			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
- 			echo '<script type="text/javascript">
- 					function init_map() {
- 						var locations = ' . json_encode($this->airport_map_data) . ';
- 						var var_location = new google.maps.LatLng(' . $this->airport_map_data[0][0] . ',' . $this->airport_map_data[0][1] . ');
-            var var_mapoptions = {
-        			center: var_location,
-        			zoom: 14,
-        			mapTypeId: google.maps.MapTypeId.HYBRID ,
-        			styles: [{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF",}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]
-        		};
-        		var var_map = new google.maps.Map(document.getElementById("map-container"),
-        			var_mapoptions);
-        		var k=0;
-        		while (k<10) {
-        			dep = new google.maps.LatLng(locations[k][0], locations[k][1]);
-        			arr = new google.maps.LatLng(locations[k+1][0], locations[k+1][1]);
-        			var icon_red = "images/airport_runway_red.png";
-        			var icon_green = "images/airport_runway_green.png";
-        			var marker_dep = new google.maps.Marker({
-        				position: dep,
-        				icon: icon_green
-        			});
-        			var marker_arr = new google.maps.Marker({
-        				position: arr,
-        				icon: icon_green
-        			});
-        			marker_dep.setMap(var_map);
-        			marker_arr.setMap(var_map);
-        			var var_marker = new google.maps.Polyline({
-        				path: [dep, arr],
-        				geodesic: true,
-        				strokeColor: ""#FF0000",
-        				strokeOpacity: 1.0,
-        				strokeWeight: 2
-        			});
-        			var_marker.setMap(var_map);
-        			var marker_dep = new google.maps.Marker({
-        				position: dep,
-        				icon: icon_green
-        			});
-        			var marker_arr = new google.maps.Marker({
-        				position: arr,
-        				icon: icon_green
-        			});
-        			marker_dep.setMap(var_map);
-        			marker_arr.setMap(var_map);
-        			k=k+2;
-        		}
-        	}
- 				</script>';
- 			echo '<style>
-      	     body { background-color:#FFFFF }
-            	#map-outer {
-            		padding: 0px;
-            		border: 0px solid #CCC;
-            		margin-bottom: 0px;
-            		background-color:#FFFFF }
-            	#map-container { height: 500px }
-            	@media all and (max-width: 991px) {
-            		#map-outer  { height: 650px }
-	             }
-              </style>';
- 		});
-
- 		add_action('wp_footer', function() {
- 			echo '<script type="text/javascript">
- 				google.maps.event.addDomListener(window, "load", init_map);
- 			</script>';
- 		});
 
  	}
 
