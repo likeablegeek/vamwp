@@ -236,7 +236,7 @@
           			var var_marker = new google.maps.Polyline({
           				path: [dep, arr],
           				geodesic: true,
-          				strokeColor: ""#FF0000",
+          				strokeColor: "#FF0000",
           				strokeOpacity: 1.0,
           				strokeWeight: 2
           			});
@@ -256,7 +256,6 @@
           	}
    				</script>';
    			echo '<style>
-        	     body { background-color:#FFFFF }
               	#map-outer {
               		padding: 0px;
               		border: 0px solid #CCC;

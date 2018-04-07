@@ -564,7 +564,6 @@
    				}
    				</script>';
    			echo '<style>
-   						body { background-color:#FFFFF }
    						#map-outer {
    							padding: 0px;
    							border: 0px solid #CCC;
@@ -583,7 +582,7 @@
    				google.maps.event.addDomListener(window, "load", init_map);
    			</script>';
    		});
-            
+
     }
 
  	}
