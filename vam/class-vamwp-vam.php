@@ -96,7 +96,7 @@ class VAMWP_VAM {
 				$this->url_param_name["tour_detail"] = "tour_id";
 				$this->url_param_name["hub_detail"] = "hub_id";
 				$this->url_rel_path["hub_detail"] = "/home/operations/hubs";
-				
+
 			}
 
 		}
@@ -295,14 +295,15 @@ class VAMWP_VAM {
 
 		$callsign = '';
 
-		$sql = 'select vam_callsign from vamapi_user_map where vam_id=' . $pilot_id . '';
+		//$sql = 'select vam_callsign from vamapi_user_map where vam_id=' . $pilot_id . '';
+		$sql = 'select callsign from gvausers where gvauser_id=' . $pilot_id . '';
 
 		if (!$result = $this->db->query($sql)) {
 			die('There was an error running the query [' . $this->db->error . ']');
 		}
 
 		while ($row = $result->fetch_assoc()) {
-			$callsign = $row["vam_callsign"];
+			$callsign = $row["callsign"];
 		}
 
 		return $callsign;
