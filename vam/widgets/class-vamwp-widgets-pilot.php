@@ -511,11 +511,9 @@
     $this->flight_data = $this->get_pilot_flights_map($this->callsign);
 
     if ( count($this->flight_data) > 0 ) {
-//        (!isset($_GET["pilot_id"])) ||
-//        (isset($_GET["pilot_id"]) && $this->wp_user->exists())
 
    		add_action('wp_head', function() {
-   			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
+        echo '<script src="https://maps.googleapis.com/maps/api/js?key=' . get_option("mt_vam_googlemaps_api_key") . '&callback=init_map" type="text/javascript"></script>';
    			echo '<script type="text/javascript">
             var a;
    					function init_map() {

@@ -197,7 +197,7 @@
       $this->airport_map_data = $this->get_airport_map_data($this->airport);
 
       add_action('wp_head', function() {
-   			echo '<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-vsYW3faDO9eLWqk1htYgbWvZynBNYI&callback=init_map" type="text/javascript"></script>';
+        echo '<script src="https://maps.googleapis.com/maps/api/js?key=' . get_option("mt_vam_googlemaps_api_key") . '&callback=init_map" type="text/javascript"></script>';
    			echo '<script type="text/javascript">
             var c;
    					function init_map() {

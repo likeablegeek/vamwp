@@ -113,6 +113,7 @@
 		$mt_vam_url_ranks = get_option("mt_vam_url_ranks");
 		$mt_vam_url_awards = get_option("mt_vam_url_awards");
 		$mt_vam_url_pilot_register = get_option("mt_vam_url_pilot_register");
+    $mt_vam_googlemaps_api_key = get_options("mt_vam_googlemaps_api_key");
 
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
@@ -183,6 +184,9 @@
 
 				$mt_vam_url_pilot_register = $_POST[ "mt_vam_url_pilot_register" ];
 				update_option("mt_vam_url_pilot_register", $mt_vam_url_pilot_register);
+
+        $mt_vam_googlemaps_api_key = $_POST[ "mt_vam_googlemaps_api_key" ];
+				update_option("mt_vam_googlemaps_api_key", $mt_vam_googlemaps_api_key);
 
         // Put a "settings saved" message on the screen
 				?>
@@ -361,6 +365,15 @@
 			<?php _e("Operations > Financial Report Page Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=va_global_financial_report</em>
+		</p>
+
+		<hr />
+
+    <p>
+			<input type="text" name="mt_vam_googlemaps_api_key" value="<?php echo $mt_vam_googlemaps_api_key; ?>" size="20">
+			<?php _e("Google Maps API Key", "vamwp"); ?>
+			<br />
+			<em>Google Maps API Key for your site</em>
 		</p>
 
 		<hr />
