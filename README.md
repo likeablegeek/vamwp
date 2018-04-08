@@ -11,7 +11,7 @@ At this time, the widgets provided allow the creation of a visitor-facing web si
 present pilot rosters, fleet details, hubs, and flights. These widgets can be combined in many different combinations in
 most Wordpress sites.
 
-Future releases will provide widgets to allow pilots to book flights, file PIREPs and more.
+Future releases will provide widgets to allow pilots to book flights, file PIREPs, manage their accounts and more.
 
 VAMwp was originally built for the launch of the new Finnair Virtual airline (http://www.finnairvirtual.fi/) but is now being
 packaged and released to the wider VAM and Wordpress community.
