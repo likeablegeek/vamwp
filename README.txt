@@ -13,7 +13,7 @@ VAMwp is a Wordpress plugin that provides integration with a Virtual Airlines Ma
 
 VAMwp is a Wordpress plugin that provides integration with a Virtual Airlines Manager (http://virtualairlinesmanager.net/)
 installation on the same server. VAMwp 1.0.1 is the next version of the plugin which supports VAM 2.6.2; version 1.0.1 is under
-development and is not considered stable. The stable version is 1.0.0.
+development and is not considered stable. The stable version is 1.0.0 and is recommended for production use.
 
 VAMwp provides a set of widgets which can be included in any Wordpress site using any theme to create a rich Wordpress-Based
 web site for a virtual airline. The roadmap is to allow complete management of the VAM airline from within Wordpress without
