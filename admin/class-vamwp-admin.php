@@ -338,14 +338,8 @@
           <?php
               $selected_page = (is_numeric($mt_vam_url_hub)) ? $mt_vam_url_hub : 0;
               $pages = get_pages();
-              if ( is_wp_error( $pages ) ) {
-                  echo $value->get_error_message();
-              }
               foreach ( $pages as $page ) {
-                  if ( is_wp_error( $page ) ) {
-                      echo $value->get_error_message();
-                  }
-                  $option = '<option value="' . strval($page->ID) . '" ';
+                  $option = '<option value="' . $page->ID . '" ';
                   $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
                   $option .= '>';
                   $option .= $page->post_title;
