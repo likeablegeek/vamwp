@@ -76,14 +76,25 @@
     <select name="<?php echo $item_name ?>">
         <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
         <?php
-            $parent = 0;
+            $parent = -1;
+            $home = -1;
+            $prefix = "";
             $selected_page = (is_numeric($item_value)) ? $item_value : 0;
             $pages = get_pages();
             foreach ( $pages as $page ) {
+                if ($pages->post_parent >= 0) {
+                  if ($parent == -1) {
+                    $home = $pages->post_parent;
+                  }
+                  if ($pages->post_parent != $parent) {
+                    $prefix .= "-";
+                  }
+                  if ()
+                }
                 $option = '<option value="' . $page->ID . '" ';
                 $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
                 $option .= '>';
-                $option .= $page->post_parent . "-" . $page->post_title;
+                $option .= $page->post_title . " (ID: " . $page->ID . ", Parent:" . $page->post_parent . ")";
                 $option .= '</option>';
                 echo $option;
             }
