@@ -69,6 +69,29 @@
 
 	}
 
+  public function admin_page_list($item_name,$item_value) {
+
+    ?>
+
+    <select name="<?php echo $item_name ?>">
+        <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
+        <?php
+            $selected_page = (is_numeric($item_value)) ? $item_value : 0;
+            $pages = get_pages();
+            foreach ( $pages as $page ) {
+                $option = '<option value="' . $page->ID . '" ';
+                $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
+                $option .= '>';
+                $option .= $page->post_title;
+                $option .= '</option>';
+                echo $option;
+            }
+        ?>
+    </select>
+
+    <?php
+  }
+
 	public function vamwp_admin_menu() {
 		add_options_page(
 			'VAMwp Options',
@@ -435,28 +458,5 @@
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vamwp-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
-
-  public function admin_page_list($item_name,$item_value) {
-
-    ?>
-
-    <select name="<?php echo $item_name ?>">
-        <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
-        <?php
-            $selected_page = (is_numeric($item_value)) ? $item_value : 0;
-            $pages = get_pages();
-            foreach ( $pages as $page ) {
-                $option = '<option value="' . $page->ID . '" ';
-                $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
-                $option .= '>';
-                $option .= $page->post_title;
-                $option .= '</option>';
-                echo $option;
-            }
-        ?>
-    </select>
-
-    <?php
-  }
 
 }
