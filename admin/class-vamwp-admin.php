@@ -336,7 +336,7 @@
       <select name="mt_vam_url_hub">
           <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
           <?php
-              $selected_page = $mt_vam_url_hub;
+              $selected_page = (is_numeric($mt_vam_url_hub)) ? $mt_vam_url_hub : 0;
               $pages = get_pages();
               foreach ( $pages as $page ) {
                   $option = '<option value="' . $page->ID . '" ';
