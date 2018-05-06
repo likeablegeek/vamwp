@@ -333,7 +333,20 @@
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_hub" value="<?php echo $mt_vam_url_hub; ?>" size="20">
+      <select name="mt_vam_url_hub">
+          <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
+          <?php
+              $selected_page = $mt_vam_url_hub;
+              $pages = get_pages();
+              foreach ( $pages as $page ) {
+                  $option = '<option value="' . $page-ID . '" ' . selected( $selected_page, $page->ID ) . '>';
+                  $option .= $page->post_title;
+                  $option .= '</option>';
+                  echo $option;
+              }
+          ?>
+      </select>
+			<!--input type="text" name="mt_vam_url_hub" value="<?php echo $mt_vam_url_hub; ?>" size="20"-->
 			<?php _e("Operations > Hubs > Hub Details Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=hub</em>
