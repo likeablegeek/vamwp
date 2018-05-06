@@ -339,7 +339,9 @@
               $selected_page = $mt_vam_url_hub;
               $pages = get_pages();
               foreach ( $pages as $page ) {
-                  $option = '<option value="' . $page->ID . '" ' . selected( $selected_page, $page->ID ) . '>';
+                  $option = '<option value="' . $page->ID . '" ';
+                  $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
+                  $option .= '>';
                   $option .= $page->post_title;
                   $option .= '</option>';
                   echo $option;
