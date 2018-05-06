@@ -7,7 +7,7 @@
  * @package           VAMWwp
  *
  * @wordpress-plugin
- * Plugin Name:       VAM Wordpress Plugin
+ * Plugin Name:       VAMwp
  * Plugin URI:        https://github.com/likeablegeek/vamwp
  * Description:       VAMwp is a Wordpress plugin that provides integration with a Virtual Airlines Manager (VAM) installation on the same server.
  * Version:           1.0.0
