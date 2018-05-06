@@ -357,7 +357,7 @@
 
 		<p>
 			<!--input type="text" name="mt_vam_url_hub" value="<?php echo $mt_vam_url_hub; ?>" size="20"-->
-      <?php admin_page_list("mt_vam_url_hub",$mt_vam_url_hub); ?>
+      <?php $this->admin_page_list("mt_vam_url_hub",$mt_vam_url_hub); ?>
 			<?php _e("Operations > Hubs > Hub Details Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=hub</em>
