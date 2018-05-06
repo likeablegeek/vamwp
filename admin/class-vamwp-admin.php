@@ -76,13 +76,14 @@
     <select name="<?php echo $item_name ?>">
         <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
         <?php
+            $parent = 0;
             $selected_page = (is_numeric($item_value)) ? $item_value : 0;
             $pages = get_pages();
             foreach ( $pages as $page ) {
                 $option = '<option value="' . $page->ID . '" ';
                 $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
                 $option .= '>';
-                $option .= $page->post_title;
+                $option .= $page->post_parent . "-" . $page->post_title;
                 $option .= '</option>';
                 echo $option;
             }
