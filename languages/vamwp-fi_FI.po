@@ -5,7 +5,7 @@ msgstr ""
 "PO-Revision-Date: 2018-04-07 13:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en_GB\n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,52 +23,52 @@ msgstr ""
 
 #: admin/class-vamwp-admin.php:74
 msgid "You do not have sufficient permissions to access this page."
-msgstr "You do not have sufficient permissions to access this page."
+msgstr "Käyttöoikeutesi eivät riitä tämän sivun käyttämiseen."
 
 #: admin/class-vamwp-admin.php:108
 msgid "Your settings have been saved. Happy flying."
-msgstr "Your settings have been saved. Happy flying."
+msgstr "Asetuksesi on tallennettu. Mukavaa lentoa."
 
 #: admin/class-vamwp-admin.php:115
 msgid "VAMwp Options"
-msgstr "VAMwp Options"
+msgstr "VAMwp asetukset"
 
 #: admin/class-vamwp-admin.php:120
 msgid "VAM URL Path"
-msgstr "VAM URL Path"
+msgstr "VAM URL osoite"
 
 #: admin/class-vamwp-admin.php:124
 msgid "VAM MySQL Server"
-msgstr "VAM MySQL Server"
+msgstr "VAM MySQL palvelin"
 
 #: admin/class-vamwp-admin.php:127
 msgid "VAM MySQL DB Name"
-msgstr "VAM MySQL DB Name"
+msgstr "VAM MySQL DB nimi"
 
 #: admin/class-vamwp-admin.php:130
 msgid "VAM MySQL DB Username"
-msgstr "VAM MySQL DB Username"
+msgstr "VAM MySQL DB käyttäjätunnus"
 
 #: admin/class-vamwp-admin.php:133
 msgid "VAM MySQL DB Password"
-msgstr "VAM MySQL DB Password"
+msgstr "VAM MySQL DB salasana"
 
 #: admin/class-vamwp-admin.php:138
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr "Tallenna muutokset"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:105
 #: vam/widgets/class-vamwp-widgets-airline.php:537
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:330
 #: vam/widgets/class-vamwp-widgets-pilot.php:329
 msgid "Date"
-msgstr "Date"
+msgstr "Päiväys"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:106
 #: vam/widgets/class-vamwp-widgets-airline.php:534
 #: vam/widgets/class-vamwp-widgets-airline.php:668
 msgid "Pilot"
-msgstr "Pilot"
+msgstr "Lentäjä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:107
 #: vam/widgets/class-vamwp-widgets-airline.php:533
@@ -77,7 +77,7 @@ msgstr "Pilot"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:126
 #: vam/widgets/class-vamwp-widgets-pilot.php:124
 msgid "Callsign"
-msgstr "Callsign"
+msgstr "Kutsumakoodi"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:108
 #: vam/widgets/class-vamwp-widgets-airline.php:956
@@ -85,7 +85,7 @@ msgstr "Callsign"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:331
 #: vam/widgets/class-vamwp-widgets-pilot.php:330
 msgid "Flight"
-msgstr "Flight"
+msgstr "Lento"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:109
 #: vam/widgets/class-vamwp-widgets-airline.php:535
@@ -94,7 +94,7 @@ msgstr "Flight"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:332
 #: vam/widgets/class-vamwp-widgets-pilot.php:331
 msgid "Departure"
-msgstr "Departure"
+msgstr "Lähtevä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:110
 #: vam/widgets/class-vamwp-widgets-airline.php:536
@@ -103,48 +103,48 @@ msgstr "Departure"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:333
 #: vam/widgets/class-vamwp-widgets-pilot.php:332
 msgid "Arrival"
-msgstr "Arrival"
+msgstr "Saapuva"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:111
 #: vam/widgets/class-vamwp-widgets-airline.php:1280
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:335
 #: vam/widgets/class-vamwp-widgets-pilot.php:334
 msgid "Distance"
-msgstr "Distance"
+msgstr "Etäisyys"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:112
 msgid "Fuel"
-msgstr "Fuel"
+msgstr "Polttoaine"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:248
 msgid "Hangar Entry Date"
-msgstr "Hangar Entry Date"
+msgstr "Käyttöönottopäivä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:249
 msgid "Hangar Exit Date"
-msgstr "Hangar Exit Date"
+msgstr "Käytöstäpoistumispäivä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:250
 msgid "Last Pilot"
-msgstr "Last Pilot"
+msgstr "Viimeinen lentäjä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:251
 msgid "Reason"
-msgstr "Reason"
+msgstr "Syy"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:404
 #: vam/widgets/class-vamwp-widgets-airline.php:376
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:120
 #: vam/widgets/class-vamwp-widgets-pilot.php:118
 msgid "Item"
-msgstr "Item"
+msgstr "Asia"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:405
 #: vam/widgets/class-vamwp-widgets-airline.php:377
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:121
 #: vam/widgets/class-vamwp-widgets-pilot.php:119
 msgid "Value"
-msgstr "Value"
+msgstr "Arvo"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:413
 #: vam/widgets/class-vamwp-widgets-airline.php:811
@@ -156,7 +156,7 @@ msgstr "Value"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:130
 #: vam/widgets/class-vamwp-widgets-pilot.php:128
 msgid "Name"
-msgstr "Name"
+msgstr "Nimi"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:417
 #: vam/widgets/class-vamwp-widgets-airline.php:813
@@ -166,7 +166,7 @@ msgstr "Name"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:144
 #: vam/widgets/class-vamwp-widgets-pilot.php:142
 msgid "Location"
-msgstr "Location"
+msgstr "Sijainti"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:422
 #: vam/widgets/class-vamwp-widgets-airline.php:812
@@ -183,7 +183,7 @@ msgstr "Hub"
 #: vam/widgets/class-vamwp-widgets-airport.php:561
 #: vam/widgets/class-vamwp-widgets-hub.php:677
 msgid "Type"
-msgstr "Type"
+msgstr "Tyyppi"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:431
 #: vam/widgets/class-vamwp-widgets-airline.php:814
@@ -193,17 +193,17 @@ msgstr "Type"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:150
 #: vam/widgets/class-vamwp-widgets-pilot.php:148
 msgid "Hours"
-msgstr "Hours"
+msgstr "Lentotunnit"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:435
 #: vam/widgets/class-vamwp-widgets-aircraft.php:436
 #: vam/widgets/class-vamwp-widgets-airline.php:1128
 msgid "Booked"
-msgstr "Booked"
+msgstr "Varattu"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:436
 msgid "Available"
-msgstr "Available"
+msgstr "Käytettävissä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:439
 #: vam/widgets/class-vamwp-widgets-airline.php:817
@@ -211,87 +211,87 @@ msgstr "Available"
 #: vam/widgets/class-vamwp-widgets-hub.php:526
 #: vam/widgets/class-vamwp-widgets-hub.php:680
 msgid "Status"
-msgstr "Status"
+msgstr "Tila"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:443
 msgid "Number of PAX"
-msgstr "Number of PAX"
+msgstr "Matkustajien määrä"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:447
 msgid "Maximum Range"
-msgstr "Maximum Range"
+msgstr "Suurin toimintasäde"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:451
 msgid "Cargo Capacity"
-msgstr "Cargo Capacity"
+msgstr "Rahtikapasiteetti"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:455
 msgid "Aircraft Length"
-msgstr "Aircraft Length"
+msgstr "Lentokoneen pituus"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:459
 msgid "Maximum Zero-fuel Weight (MZFW)"
-msgstr "Maximum Zero-fuel Weight (MZFW)"
+msgstr "Suurin massa ilman polttoainetta (MZFW)"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:463
 msgid "Maximum Landing Weight (MLW)"
-msgstr "Maximum Landing Weight (MLW)"
+msgstr "Suurin laskeutumismassa (MLW)"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:467
 msgid "Maximum Takeoff Weight (MTOW)"
-msgstr "Maximum Takeoff Weight (MTOW)"
+msgstr "Suurin nousukiitomassa (MTOW)"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:471
 msgid "Cruising Speed"
-msgstr "Cruising Speed"
+msgstr "Matkanopeus"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:475
 msgid "Service Ceiling"
-msgstr "Service Ceiling"
+msgstr "Suurin sallittu lentokorkeus"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:479
 msgid "Crew Members"
-msgstr "Crew Members"
+msgstr "Miehistön jäsenet"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:382
 msgid "Pilots"
-msgstr "Pilots"
+msgstr "Lentäjät"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:386
 msgid "Aircraft in Fleet"
-msgstr "Aircraft in Fleet"
+msgstr "Lentokoneita laivastossa"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:390
 msgid "Routes"
-msgstr "Routes"
+msgstr "Reitit"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:394
 msgid "Total Hours"
-msgstr "Total Hours"
+msgstr "Lentotuntien kokonaismäärä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:398
 msgid "Flights Total"
-msgstr "Flights Total"
+msgstr "Lentojen kokonaismäärä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:402
 msgid "Flights Regular"
-msgstr "Flights Regular"
+msgstr "Lentoja säännöllisesti"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:406
 msgid "Flights Charter"
-msgstr "Flights Charter"
+msgstr "Charterlennot"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:410
 msgid "% Flights Regular"
-msgstr "% Flights Regular"
+msgstr "% säännöllisiä lentoja"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:538
 msgid "Flight Time"
-msgstr "Flight Time"
+msgstr "Lentoaika"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:669
 msgid "Joined"
-msgstr "Joined"
+msgstr "Liittynyt"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:815
 #: vam/widgets/class-vamwp-widgets-airline.php:1407
@@ -299,12 +299,12 @@ msgstr "Joined"
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:134
 #: vam/widgets/class-vamwp-widgets-pilot.php:132
 msgid "Rank"
-msgstr "Rank"
+msgstr "Arvoaste"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:816
 #: vam/widgets/class-vamwp-widgets-hub.php:525
 msgid "Country"
-msgstr "Country"
+msgstr "Maa"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:818
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:154
@@ -320,135 +320,135 @@ msgstr "VATSIM"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:835
 msgid "Active"
-msgstr "Active"
+msgstr "Aktiivinen"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:835
 msgid "Inactive"
-msgstr "Inactive"
+msgstr "Epäaktiivinen"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:959
 #: vam/widgets/class-vamwp-widgets-pilot-public.php:334
 #: vam/widgets/class-vamwp-widgets-pilot.php:333
 msgid "Duration"
-msgstr "Duration"
+msgstr "Kesto"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:960
 msgid "Plane Type"
-msgstr "Plane Type"
+msgstr "Lentokonetyyppi"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1121
 msgid "Tail Number"
-msgstr "Tail Number"
+msgstr "Lentokoneen rekisteritunnus"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1129
 #: vam/widgets/class-vamwp-widgets-airline.php:1281
 #: vam/widgets/class-vamwp-widgets-airline.php:1661
 msgid "Info"
-msgstr "Info"
+msgstr "Lisätietoa"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1276
 msgid "Tour"
-msgstr "Tour"
+msgstr "Kiertue"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1277
 msgid "Start Date"
-msgstr "Start Date"
+msgstr "Alkamispäivä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1278
 msgid "End Date"
-msgstr "End Date"
+msgstr "Päättymispäivä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1279
 msgid "Num. Legs"
-msgstr "Num. Legs"
+msgstr "Etappien määrä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1408
 msgid "Rank Image"
-msgstr "Rank Image"
+msgstr "Arvoasteen kuva"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1409
 msgid "Rank Minimum"
-msgstr "Rank Minimum"
+msgstr "Pienin arvoaste"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1410
 msgid "Rank Maximum"
-msgstr "Rank Maximum"
+msgstr "Suurin arvoaste"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1411
 msgid "Salary Per Hour"
-msgstr "Salary Per Hour"
+msgstr "Palkka per tunti"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1533
 msgid "Award Name"
-msgstr "Award Name"
+msgstr "Palkinnon nimi"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1534
 msgid "Award Description"
-msgstr "Award Description"
+msgstr "Palkinnon lisätiedot"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1658
 #: vam/widgets/class-vamwp-widgets-hub.php:226
 msgid "Number of Pilots"
-msgstr "Number of Pilots"
+msgstr "Lentäjien määrä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1659
 #: vam/widgets/class-vamwp-widgets-hub.php:229
 msgid "Number of Aircraft"
-msgstr "Number of Aircraft"
+msgstr "Lentokoneiden määrä"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1660
 #: vam/widgets/class-vamwp-widgets-hub.php:232
 msgid "Number of Routes"
-msgstr "Number of Routes"
+msgstr "Reittien määrä"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:298
 msgid "Runway"
-msgstr "Runway"
+msgstr "Kiitotie"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:299
 msgid "Length"
-msgstr "Length"
+msgstr "Pituus"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:300
 msgid "Width"
-msgstr "Width"
+msgstr "Leveys"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:301
 msgid "Elevation"
-msgstr "Elevation"
+msgstr "Korkeus"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:302
 msgid "Displaced Threshold"
-msgstr "Displaced Threshold"
+msgstr "Siirretty kynnys"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:303
 msgid "Heading"
-msgstr "Heading"
+msgstr "Suunta"
 
 #: vam/widgets/class-vamwp-widgets-airport.php:439
 #: vam/widgets/class-vamwp-widgets-airport.php:563
 msgid "Freq"
-msgstr "Freq"
+msgstr "Taajuus"
 
 #: vam/widgets/class-vamwp-widgets-hub.php:79
 msgid "View airport information"
-msgstr "View airport information"
+msgstr "Näytä lentokentän tiedot"
 
 #: vam/widgets/class-vamwp-widgets-hub.php:221
 msgid "Website"
-msgstr "Website"
+msgstr "Nettisivu"
 
 #: vam/widgets/class-vamwp-widgets-hub.php:676
 msgid "Registry"
-msgstr "Registry"
+msgstr "Rekisteri"
 
 #: vam/widgets/class-vamwp-widgets-pilot.php:160
 msgid "User type"
-msgstr "User type"
+msgstr "Käyttäjätyyppi"
 
 #: vam/widgets/class-vamwp-widgets-pilot.php:335
 msgid "Validation"
-msgstr "Validation"
+msgstr "Vahvistus"
 
-#~ msgid "settings saved."
-#~ msgstr "Your settings have been saved. Happy flying."
+#~ msgid "asetukset on tallennettu."
+#~ msgstr "Asetuksesi on tallennettu. Mukavaa lentoa."

@@ -69,6 +69,54 @@
 
 	}
 
+  public function admin_page_list($item_name,$item_value) {
+
+    ?>
+
+    <select name="<?php echo $item_name ?>">
+        <option selected="selected" disabled="disabled" value=""><?php echo esc_attr( __( 'Select page' ) ); ?></option>
+        <?php
+            $item = array();
+            $parent = -1;
+            $home = -1;
+            $last_parent = -1;
+            $prefix = "";
+            $selected_page = (is_numeric($item_value)) ? $item_value : 0;
+            $pages = get_pages();
+            foreach ( $pages as $page ) {
+                if ($page->ID > 0) {
+                  $item[$page->ID]->parent = $page->post_parent;
+                  if ($parent == -1) {
+                    $home = $page->post_parent;
+                    $parent = $page->post_parent;
+                    $item[$page->ID]->prefix = $prefix;
+                  } else if ($page->post_parent == $last_parent) {
+                    $parent = $page->post_parent;
+                    $prefix = $item[$parent]->prefix . "-";
+                    $item[$page->ID]->prefix = $prefix;
+                    $last_parent = $item[$parent]->parent;
+                  } else if ($page->post_parent != $parent) {
+                    $prefix .= "-";
+                    $item[$page->ID]->prefix = $prefix;
+                    $last_parent = $parent;
+                    $parent = $page->post_parent;
+                  }
+                }
+                if ($this->mt_vam_i18n_pll == 1 && pll_get_post_language($page->ID) == pll_default_language()) {
+                  $option = '<option value="' . $page->ID . '" ';
+                  $option .= ( $page->ID == $selected_page ) ? 'selected="selected"' : '';
+                  $option .= '>';
+                  $option .= $prefix . $page->post_title . " (ID: " . $page->ID . ", Parent:" . $page->post_parent . ")";
+                  $option .= '</option>';
+                  echo $option;
+                }
+            }
+        ?>
+    </select>
+
+    <?php
+  }
+
 	public function vamwp_admin_menu() {
 		add_options_page(
 			'VAMwp Options',
@@ -96,6 +144,7 @@
 		$mt_vam_mysql_db = get_option("mt_vam_mysql_db");
 		$mt_vam_mysql_username = get_option("mt_vam_mysql_username");
 		$mt_vam_mysql_password = get_option("mt_vam_mysql_password");
+    $mt_vam_i18n_pll = get_option("mt_vam_i18n_pll"); $this->mt_vam_i18n_pll = $mt_vam_i18n_pll;
 		$mt_vam_url_school = get_option("mt_vam_url_school");
 		$mt_vam_url_stats = get_option("mt_vam_url_stats");
 		$mt_vam_url_pilots_public = get_option("mt_vam_url_pilots_public");
@@ -133,6 +182,9 @@
 
 				$mt_vam_mysql_password = $_POST[ "mt_vam_mysql_password" ];
 				update_option("mt_vam_mysql_password", $mt_vam_mysql_password);
+
+        $mt_vam_i18n_pll = $_POST[ "mt_vam_i18n_pll" ];
+				update_option("mt_vam_i18n_pll", $mt_vam_i18n_pll);
 
 				$mt_vam_url_school = $_POST[ "mt_vam_url_school" ];
 				update_option("mt_vam_url_school", $mt_vam_url_school);
@@ -245,123 +297,155 @@
 
 		<hr />
 
+    <h3>I18N</h3>
+    <p><strong>VAMwp supports PolyLang for internationalisation. If you are using PLL, indicate this and provide the default site language.</strong></p>
+
+    <p>
+      <select name="mt_vam_i18n_pll">
+          <option value="0" <?php echo ($mt_vam_i18n_pll == 0) ? "selected='selected'" : "''";?>>No</option>
+          <option value="1" <?php echo ($mt_vam_i18n_pll == 1) ? "selected='selected'" : "''";?>>Yes</option>
+      </select>
+			<?php _e("Are you using PolyLang?", "vamwp"); ?>
+			<br />
+			<em>Select "Yes" once you have installed PolyLang and defined your default language.</em>
+		</p>
+
+    <hr />
+
 		<h3>VAM URLs</h3>
 		<p><strong>Use these settings to provide alternate Wordpress page URLs to replace links to standard VAM URLs (indicated after each field).</strong></p>
 
 		<p>
-			<input type="text" name="mt_vam_url_stats" value="<?php echo $mt_vam_url_stats; ?>" size="20">
+      <!--input type="text" name="mt_vam_url_stats" value="<?php echo $mt_vam_url_stats; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_stats",$mt_vam_url_stats); ?>
 			<?php _e("Statistics Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=stats</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_pilots_public" value="<?php echo $mt_vam_url_pilots_public; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_pilots_public" value="<?php echo $mt_vam_url_pilots_public; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_pilots_public",$mt_vam_url_pilots_public); ?>
 			<?php _e("Pilot Roster Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=pilots_public</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_pilot_details" value="<?php echo $mt_vam_url_pilot_details; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_pilot_details" value="<?php echo $mt_vam_url_pilot_details; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_pilot_details",$mt_vam_url_pilot_details); ?>
 			<?php _e("Pilot Roster > Pilot Details Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=pilot_details</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_staff" value="<?php echo $mt_vam_url_staff; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_staff" value="<?php echo $mt_vam_url_staff; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_staff",$mt_vam_url_staff); ?>
 			<?php _e("About > Staff Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=staff</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_school" value="<?php echo $mt_vam_url_school; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_school" value="<?php echo $mt_vam_url_school; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_school",$mt_vam_url_school); ?>
 			<?php _e("About > School Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=school</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_rules" value="<?php echo $mt_vam_url_rules; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_rules" value="<?php echo $mt_vam_url_rules; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_rules",$mt_vam_url_rules); ?>
 			<?php _e("About > Rules Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=rules</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_pilot_register" value="<?php echo $mt_vam_url_pilot_register; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_pilot_register" value="<?php echo $mt_vam_url_pilot_register; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_pilot_register",$mt_vam_url_pilot_register); ?>
 			<?php _e("About > Register Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=pilot_register</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_fleet_public" value="<?php echo $mt_vam_url_fleet_public; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_fleet_public" value="<?php echo $mt_vam_url_fleet_public; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_fleet_public",$mt_vam_url_fleet_public); ?>
 			<?php _e("Operations > Fleet Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=fleet_public</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_plane_info_public" value="<?php echo $mt_vam_url_plane_info_public; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_plane_info_public" value="<?php echo $mt_vam_url_plane_info_public; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_plane_info_public",$mt_vam_url_plane_info_public); ?>
 			<?php _e("Operations > Fleet > Aircraft Details Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=plane_info_public</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_route_public" value="<?php echo $mt_vam_url_route_public; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_route_public" value="<?php echo $mt_vam_url_route_public; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_route_public",$mt_vam_url_route_public); ?>
 			<?php _e("Operations > Routes Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=route_public</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_airport_info" value="<?php echo $mt_vam_url_airport_info; ?>" size="20">
-			<?php _e("Operations > Routes > Airport Information Page", "vamwp"); ?>
+			<!--input type="text" name="mt_vam_url_airport_info" value="<?php echo $mt_vam_url_airport_info; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_airport_info",$mt_vam_url_airport_info); ?>
+			<?php _e("Operations > Hubs > Airport Information Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=airport_info</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_hubs" value="<?php echo $mt_vam_url_hubs; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_hubs" value="<?php echo $mt_vam_url_hubs; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_hubs",$mt_vam_url_hubs); ?>
 			<?php _e("Operations > Hubs Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=hubs</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_hub" value="<?php echo $mt_vam_url_hub; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_hub" value="<?php echo $mt_vam_url_hub; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_hub",$mt_vam_url_hub); ?>
 			<?php _e("Operations > Hubs > Hub Details Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=hub</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_tours" value="<?php echo $mt_vam_url_tours; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_tours" value="<?php echo $mt_vam_url_tours; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_tours",$mt_vam_url_tours); ?>
 			<?php _e("Operations > Tours Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=tours</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_ranks" value="<?php echo $mt_vam_url_ranks; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_ranks" value="<?php echo $mt_vam_url_ranks; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_ranks",$mt_vam_url_ranks); ?>
 			<?php _e("Operations > Pilot Ranks Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=ranks</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_awards" value="<?php echo $mt_vam_url_awards; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_awards" value="<?php echo $mt_vam_url_awards; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_awards",$mt_vam_url_awards); ?>
 			<?php _e("Operations > Awards Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=awards</em>
 		</p>
 
 		<p>
-			<input type="text" name="mt_vam_url_va_global_financial_reports" value="<?php echo $mt_vam_url_va_global_financial_reports; ?>" size="20">
+			<!--input type="text" name="mt_vam_url_va_global_financial_reports" value="<?php echo $mt_vam_url_va_global_financial_reports; ?>" size="20"-->
+      <?php $this->admin_page_list("mt_vam_url_va_global_financial_reports",$mt_vam_url_va_global_financial_reports); ?>
 			<?php _e("Operations > Financial Report Page Page", "vamwp"); ?>
 			<br />
 			<em>/vam/index.php?page=va_global_financial_report</em>
