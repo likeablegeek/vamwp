@@ -1,6 +1,6 @@
 # vamwp
 VAMwp is a Wordpress plugin that provides integration with a Virtual Airlines Manager (http://virtualairlinesmanager.net/)
-installation on the same server. VAMwp 1.0.0 is the current version of the plugin which supports VAM 2.6.2.
+installation on the same server. VAMwp 1.0.1 is the current version of the plugin which supports VAM 2.6.2. The stable version is 1.0.0 and is recommended for production use.
 
 VAMwp provides a set of widgets which can be included in any Wordpress site using any theme to create a rich Wordpress-Based
 web site for a virtual airline. The roadmap is to allow complete management of the VAM airline from within Wordpress without
@@ -11,7 +11,7 @@ At this time, the widgets provided allow the creation of a visitor-facing web si
 present pilot rosters, fleet details, hubs, and flights. These widgets can be combined in many different combinations in
 most Wordpress sites.
 
-Future releases will provide widgets to allow pilots to book flights, file PIREPs and more.
+Future releases will provide widgets to allow pilots to book flights, file PIREPs, manage their accounts and more.
 
 VAMwp was originally built for the launch of the new Finnair Virtual airline (http://www.finnairvirtual.fi/) but is now being
 packaged and released to the wider VAM and Wordpress community.
