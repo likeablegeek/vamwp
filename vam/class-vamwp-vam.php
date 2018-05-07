@@ -212,6 +212,13 @@ class VAMWP_VAM {
 		$url_connector = "?";
 		$url_param = "";
 
+		if (is_numeric($url_redir)) {
+
+			$page_id = pll_get_post($url_redir);
+			$url_redir = get_permalink($post=$page_id);
+
+		}
+
 		if ($url_redir == "") {
 			$url_redir = $this->base_url_path . "?page=" . $urltype;
 			$url_connector = "&";
