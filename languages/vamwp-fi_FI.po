@@ -199,7 +199,7 @@ msgstr "Lentotunnit"
 #: vam/widgets/class-vamwp-widgets-aircraft.php:436
 #: vam/widgets/class-vamwp-widgets-airline.php:1128
 msgid "Booked"
-msgstr "Varattu"
+msgstr "Varaustila"
 
 #: vam/widgets/class-vamwp-widgets-aircraft.php:436
 msgid "Available"
@@ -368,11 +368,11 @@ msgstr "Arvoasteen kuva"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1409
 msgid "Rank Minimum"
-msgstr "Pienin arvoaste"
+msgstr "Arvoasteen vähimmäislentotunnit"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1410
 msgid "Rank Maximum"
-msgstr "Suurin arvoaste"
+msgstr "Arvoasteen enimmäislentotunnit"
 
 #: vam/widgets/class-vamwp-widgets-airline.php:1411
 msgid "Salary Per Hour"
