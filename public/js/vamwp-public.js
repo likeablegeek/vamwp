@@ -157,8 +157,8 @@
         	"info":     false,
         	"searching":	false,
         	"ordering":	false
-   		 });
-
+			});
+			
 	});
 
 })( jQuery );
